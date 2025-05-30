@@ -38,4 +38,10 @@ async function testConnection() {
   }
 }
 
+app.use("/api/auth", authRoutes);
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "Server is running" });
+});
+
 
