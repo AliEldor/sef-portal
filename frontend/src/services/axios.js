@@ -46,4 +46,51 @@ mainAPI.interceptors.response.use(
   }
 );
 
+export const studentService = {
+  async fetchStudents(count = 20) {
+    try {
+      const response = await randomUserAPI.get("", {
+        params: {
+          results: count,
+          nat: "us,gb,ca,au",
+          inc: "name,email,picture,cell,location,dob,login",
+          noinfo: true,
+        },
+      });
 
+      return response.data.results.map((user, index) => {
+        const tracks = ["Full Stack Software Engineering", "UI/UX Design"];
+        const track = tracks[Math.floor(Math.random() * tracks.length)];
+
+        const cohortNumber = Math.floor(Math.random() * 10) + 20;
+        const cohortDisplay =
+          track === "Full Stack Software Engineering"
+            ? `FSE ${cohortNumber}`
+            : `UI/UX ${cohortNumber}`;
+
+        const username = user.login.username;
+
+        return {
+          id: index + 1,
+          name: `${user.name.first} ${user.name.last}`,
+          email: user.email,
+          track: track,
+          avatar: user.picture.large,
+          status: Math.random() > 0.2 ? "active" : "inactive",
+          cohort: cohortNumber.toString(),
+          cohortDisplay: cohortDisplay,
+          linkedinUrl: `https://linkedin.com/in/${username}`,
+          githubUrl: `https://github.com/${username}`,
+          phone: user.cell,
+          location: `${user.location.city}, ${user.location.country}`,
+          age: user.dob.age,
+        };
+      });
+    } catch (error) {
+      throw new Error("Failed to fetch student data");
+    }
+  },
+
+  
+};
+;
