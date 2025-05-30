@@ -76,7 +76,84 @@
       </div>
     </div>
 
-    
+    <!-- Students Grid -->
+    <div class="students-section">
+      <div class="section-header">
+        <h2>Students ({{ filteredStudents.length }})</h2>
+      </div>
+
+      <div v-if="loading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading students...</p>
+      </div>
+
+      <div v-else-if="error" class="error-state">
+        <AlertCircle :size="64" color="#ef4444" />
+        <h3>Error Loading Students</h3>
+        <p>{{ error }}</p>
+        <button @click="fetchStudents" class="retry-btn">
+          <RotateCw :size="16" />
+          Try Again
+        </button>
+      </div>
+
+      <div v-else-if="filteredStudents.length === 0" class="empty-state">
+        <XCircle :size="64" />
+        <h3>No students found</h3>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+
+      <div v-else class="students-grid">
+        <div
+          v-for="student in filteredStudents"
+          :key="student.id"
+          class="student-card"
+          @click="viewStudentProfile(student)"
+        >
+          <div class="student-avatar-wrapper">
+            <img
+              :src="student.avatar"
+              :alt="student.name"
+              class="student-avatar"
+              @error="handleImageError"
+            />
+            <div
+              class="student-status"
+              :class="student.status || 'active'"
+            ></div>
+          </div>
+
+          <div class="student-info">
+            <h3>{{ student.name }}</h3>
+            <p class="student-track">{{ student.track }}</p>
+            <p class="student-email">{{ student.email }}</p>
+
+            <div class="student-meta">
+              <span class="student-cohort">{{ student.cohortDisplay }}</span>
+            </div>
+          </div>
+
+          <div class="student-actions">
+            <a
+              :href="student.linkedinUrl"
+              target="_blank"
+              class="action-btn linkedin"
+              @click.stop
+            >
+              <Linkedin :size="16" />
+            </a>
+            <a
+              :href="student.githubUrl"
+              target="_blank"
+              class="action-btn github"
+              @click.stop
+            >
+              <Github :size="16" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
