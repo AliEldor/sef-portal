@@ -81,5 +81,24 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuth } from '../composables/useAuth'
+import { Layers, Mail, Lock, Eye, EyeOff } from 'lucide-vue-next'
 
+const router = useRouter()
+const { login, isLoading } = useAuth()
+
+// Form data
+const email = ref('')
+const password = ref('')
+const rememberMe = ref(false)
+const showPassword = ref(false)
+
+const emailError = ref('')
+const passwordError = ref('')
+
+
+</script>
 
