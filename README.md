@@ -66,16 +66,27 @@
     <tr>
       <td><strong>Services Layer</strong></td>
       <td><strong>Vue Components</strong></td>
-      <td><strong>Router Setup</strong></td>
     </tr>
     <tr>
-      <td><img src="./readme/axios.jpg" width="600" height="400"></td>
-      <td><img src="./readme/views.jpg" width="600" height="400"></td>
-      <td><img src="./readme/routes.jpg" width="450" height="300"></td>
+      <td><img src="./readme/axios.jpg" width="700" height="450"></td>
+      <td><img src="./readme/views.jpg" width="700" height="450"></td>
     </tr>
     <tr>
       <td><em>Axios interceptors & API management</em></td>
       <td><em>Component-based architecture</em></td>
+    </tr>
+  </table>
+</div>
+
+<div align="center">
+  <table>
+    <tr>
+      <td><strong>Router Setup</strong></td>
+    </tr>
+    <tr>
+      <td><img src="./readme/routes.jpg" width="700" height="450"></td>
+    </tr>
+    <tr>
       <td><em>Protected routes with auth guards</em></td>
     </tr>
   </table>
