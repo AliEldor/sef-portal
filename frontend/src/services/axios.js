@@ -104,6 +104,9 @@ export const studentService = {
     );
   },
 
-  
+  filterByTrack(students, track) {
+    if (!track) return students;
+    return students.filter((student) => student.track === track);
+  },
 };
 ;
