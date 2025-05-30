@@ -226,6 +226,19 @@ const trackCounts = computed(() => {
   return counts;
 });
 
+watch(searchQuery, (newQuery) => {});
+
+const handleLogout = async () => {
+  try {
+    await logout();
+    router.push("/login");
+  } catch (error) {
+    router.push("/login");
+  }
+};
+
+const viewStudentProfile = (student) => {};
+
 
 </script>
 
