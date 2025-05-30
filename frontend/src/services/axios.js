@@ -152,7 +152,10 @@ export const authService = {
     return !!(token && user);
   },
 
- 
+  getCurrentUser() {
+    const userStr = localStorage.getItem("user");
+    return userStr ? JSON.parse(userStr) : null;
+  },
 };
 
 export { randomUserAPI, mainAPI };
