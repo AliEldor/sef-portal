@@ -64,6 +64,49 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/profile", async (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
 
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({
+        success: false,
+        message: "No token provided",
+      });
+    }
+
+    const token = authHeader.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    const [users] = await db.execute(
+      "SELECT id, email, name, created_at FROM users WHERE id = ?",
+      [decoded.id]
+    );
+
+    if (users.length === 0) {
+      return res.status(401).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      data: users[0],
+    });
+  } catch (error) {
+    if (error.name === "JsonWebTokenError") {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid token",
+      });
+    }
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to get profile",
+    });
+  }
+});
 
 export default router;
