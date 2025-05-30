@@ -91,6 +91,19 @@ export const studentService = {
     }
   },
 
+  searchStudents(students, query) {
+    if (!query) return students;
+
+    const searchTerm = query.toLowerCase();
+    return students.filter(
+      (student) =>
+        student.name.toLowerCase().includes(searchTerm) ||
+        student.email.toLowerCase().includes(searchTerm) ||
+        student.track.toLowerCase().includes(searchTerm) ||
+        student.location.toLowerCase().includes(searchTerm)
+    );
+  },
+
   
 };
 ;
