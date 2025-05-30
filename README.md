@@ -45,6 +45,42 @@
   </table>
 </div>
 
+## Code Highlights
+
+### Advanced Vue.js Implementation
+
+<div align="center">
+  <img src="./readme/advanced-implementation.jpg" width="800" height="500">
+</div>
+
+### JWT Authentication System
+
+<div align="center">
+  <img src="./readme/jwt-auth.jpg" width="800" height="500">
+</div>
+
+## Architecture
+
+<div align="center">
+  <table>
+    <tr>
+      <td><strong>Services Layer</strong></td>
+      <td><strong>Vue Components</strong></td>
+      <td><strong>Router Setup</strong></td>
+    </tr>
+    <tr>
+      <td><img src="./readme/axios.jpg" width="600" height="400"></td>
+      <td><img src="./readme/views.jpg" width="600" height="400"></td>
+      <td><img src="./readme/routes.jpg" width="450" height="300"></td>
+    </tr>
+    <tr>
+      <td><em>Axios interceptors & API management</em></td>
+      <td><em>Component-based architecture</em></td>
+      <td><em>Protected routes with auth guards</em></td>
+    </tr>
+  </table>
+</div>
+
 
 
 - [ ] Real-time notifications
