@@ -285,4 +285,77 @@
   margin-bottom: 16px;
 }
 
+.student-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 8px 0;
+}
+
+.student-track {
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.student-email {
+  color: #718096;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.student-meta {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.student-cohort {
+  background: #e0e7ff;
+  color: #5b21b6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.student-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #64748b;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.action-btn.linkedin:hover {
+  background: #0077b5;
+}
+
+.action-btn.github:hover {
+  background: #333;
+}
+
 
