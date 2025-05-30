@@ -61,35 +61,25 @@
 
 ## Architecture
 
+### Services Layer
 <div align="center">
-  <table>
-    <tr>
-      <td><strong>Services Layer</strong></td>
-      <td><strong>Vue Components</strong></td>
-    </tr>
-    <tr>
-      <td><img src="./readme/axios.jpg" width="700" height="450"></td>
-      <td><img src="./readme/views.jpg" width="700" height="450"></td>
-    </tr>
-    <tr>
-      <td><em>Axios interceptors & API management</em></td>
-      <td><em>Component-based architecture</em></td>
-    </tr>
-  </table>
+  <img src="./readme/axios.jpg" width="900" height="600">
+  <br>
+  <em>Axios interceptors & API management</em>
 </div>
 
+### Vue Components
 <div align="center">
-  <table>
-    <tr>
-      <td><strong>Router Setup</strong></td>
-    </tr>
-    <tr>
-      <td><img src="./readme/routes.jpg" width="700" height="450"></td>
-    </tr>
-    <tr>
-      <td><em>Protected routes with auth guards</em></td>
-    </tr>
-  </table>
+  <img src="./readme/views.jpg" width="900" height="600">
+  <br>
+  <em>Component-based architecture</em>
+</div>
+
+### Router Setup
+<div align="center">
+  <img src="./readme/routes.jpg" width="900" height="600">
+  <br>
+  <em>Protected routes with auth guards</em>
 </div>
 
 ## Getting Started
