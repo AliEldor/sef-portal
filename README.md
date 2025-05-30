@@ -63,7 +63,7 @@
 
 ### Services Layer
 <div align="center">
-  <img src="./readme/axios.jpg" width="900" height="600">
+  <img src="./readme/axios.jpg" width="800" height="700">
   <br>
   <em>Axios interceptors & API management</em>
 </div>
