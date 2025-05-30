@@ -55,6 +55,27 @@
       </div>
     </div>
 
+    <!-- Search and Filter -->
+    <div class="controls-section">
+      <div class="search-box">
+        <Search class="search-icon" :size="20" />
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search students..."
+          class="search-input"
+        />
+      </div>
+
+      <div class="filter-dropdown">
+        <select v-model="selectedTrack" class="filter-select">
+          <option value="">All Tracks</option>
+          <option value="Full Stack Software Engineering">Full Stack</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+        </select>
+      </div>
+    </div>
+
     
   </div>
 </template>
