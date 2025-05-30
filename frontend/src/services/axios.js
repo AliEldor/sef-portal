@@ -137,6 +137,15 @@ export const authService = {
     }
   },
 
+  async getProfile() {
+    try {
+      const response = await mainAPI.get("/auth/profile");
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || "Failed to get profile");
+    }
+  },
+
   
 };
 
