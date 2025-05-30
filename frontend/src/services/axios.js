@@ -110,6 +110,34 @@ export const studentService = {
   },
 };
 
+export const authService = {
+  async login(credentials) {
+    try {
+      const response = await mainAPI.post("/auth/login", credentials);
 
+      if (response.data.success && response.data.token) {
+        localStorage.setItem("authToken", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.data));
+      }
+
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || "Login failed");
+    }
+  },
+
+  async logout() {
+    try {
+      localStorage.removeItem("authToken");
+      localStorage.removeItem("user");
+
+      return { success: true, message: "Logged out successfully" };
+    } catch (error) {
+      throw new Error("Logout failed");
+    }
+  },
+
+  
+};
 
 export { randomUserAPI, mainAPI };
