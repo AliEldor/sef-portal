@@ -109,4 +109,7 @@ export const studentService = {
     return students.filter((student) => student.track === track);
   },
 };
-;
+
+
+
+export { randomUserAPI, mainAPI };
