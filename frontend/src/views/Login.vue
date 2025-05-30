@@ -99,6 +99,54 @@ const showPassword = ref(false)
 const emailError = ref('')
 const passwordError = ref('')
 
+const togglePassword = () => {
+  showPassword.value = !showPassword.value
+}
 
+const validateForm = () => {
+  emailError.value = ''
+  passwordError.value = ''
+  
+  if (!email.value) {
+    emailError.value = 'Email is required'
+    return false
+  }
+  
+  if (!email.value.includes('@')) {
+    emailError.value = 'Please enter a valid email'
+    return false
+  }
+  
+  if (!password.value) {
+    passwordError.value = 'Password is required'
+    return false
+  }
+  
+  if (password.value.length < 6) {
+    passwordError.value = 'Password must be at least 6 characters'
+    return false
+  }
+  
+  return true
+}
+
+const handleLogin = async () => {
+  if (!validateForm()) return
+  
+  try {
+    const result = await login({
+      email: email.value,
+      password: password.value
+    })
+    
+    if (result.success) {
+      router.push('/home')
+    } else {
+      passwordError.value = result.error || 'Login failed. Please try again.'
+    }
+  } catch (error) {
+    passwordError.value = 'Login failed. Please try again.'
+  }
+}
 </script>
 
