@@ -199,6 +199,33 @@ const fetchStudents = async () => {
   }
 };
 
+const handleImageError = (event) => {
+  event.target.src =
+    "https://ui-avatars.com/api/?name=Student&background=667eea&color=fff&size=200";
+};
+
+const filteredStudents = computed(() => {
+  let filtered = students.value;
+
+  if (searchQuery.value) {
+    filtered = studentService.searchStudents(filtered, searchQuery.value);
+  }
+
+  if (selectedTrack.value) {
+    filtered = studentService.filterByTrack(filtered, selectedTrack.value);
+  }
+
+  return filtered;
+});
+
+const trackCounts = computed(() => {
+  const counts = {};
+  students.value.forEach((student) => {
+    counts[student.track] = (counts[student.track] || 0) + 1;
+  });
+  return counts;
+});
+
 
 </script>
 
