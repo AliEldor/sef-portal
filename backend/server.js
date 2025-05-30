@@ -44,4 +44,18 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "OK", message: "Server is running" });
 });
 
+app.use((error, req, res, next) => {
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
 
