@@ -185,6 +185,20 @@ const searchQuery = ref("");
 const selectedTrack = ref("");
 const students = ref([]);
 
+const fetchStudents = async () => {
+  try {
+    loading.value = true;
+    error.value = null;
+
+    const studentData = await studentService.fetchStudents(24);
+    students.value = studentData;
+  } catch (err) {
+    error.value = err.message || "Failed to load student data";
+  } finally {
+    loading.value = false;
+  }
+};
+
 
 </script>
 
