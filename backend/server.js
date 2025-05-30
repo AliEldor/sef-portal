@@ -29,3 +29,13 @@ export const db = mysql.createPool({
   queueLimit: 0,
 });
 
+async function testConnection() {
+  try {
+    const connection = await db.getConnection();
+    connection.release();
+  } catch (error) {
+    process.exit(1);
+  }
+}
+
+
