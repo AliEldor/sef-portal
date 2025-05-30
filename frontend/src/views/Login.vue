@@ -150,3 +150,6 @@ const handleLogin = async () => {
 }
 </script>
 
+<style scoped>
+@import '../styles/login.css';
+</style>
