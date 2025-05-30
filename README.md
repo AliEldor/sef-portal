@@ -164,5 +164,5 @@
 ---
 
 <div align="center">
-  <strong>Built with ❤️ using Vue.js 3 and Express.js</strong>
+  <strong>Built using Vue.js 3 and Express.js</strong>
 </div>
