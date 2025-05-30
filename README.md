@@ -35,14 +35,21 @@
       <td><strong>Dashboard</strong></td>
     </tr>
     <tr>
-      <td><img src="./readme/login.PNG" width="500" height="250"></td>
-      <td><img src="./readme/home.PNG" width="500" height="250"></td>
+      <td><img src="./readme/login.PNG" width="400" height="250"></td>
+      <td><img src="./readme/home.PNG" width="400" height="250"></td>
     </tr>
     <tr>
       <td><em>Clean authentication form with validation</em></td>
       <td><em>Interactive student dashboard with real-time search</em></td>
     </tr>
   </table>
+</div>
+
+### Dashboard in Action
+<div align="center">
+  <img src="./readme/homee.gif" width="700" height="400">
+  <br>
+  <em>Real-time search and filtering functionality</em>
 </div>
 
 ## Code Highlights
@@ -63,7 +70,7 @@
 
 ### Services Layer
 <div align="center">
-  <img src="./readme/axios.jpg" width="800" height="700">
+  <img src="./readme/axios.jpg" width="800" height="500">
   <br>
   <em>Axios interceptors & API management</em>
 </div>
@@ -157,5 +164,5 @@
 ---
 
 <div align="center">
-  <strong>Built using Vue.js 3 and Express.js</strong>
+  <strong>Built with ❤️ using Vue.js 3 and Express.js</strong>
 </div>
