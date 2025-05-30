@@ -67,7 +67,9 @@
         </button>
       </form>
 
-     
+      <div class="login-footer">
+        <p>Don't have an account? <a href="#" class="signup-link">Contact Admin</a></p>
+      </div>
     </div>
 
    
