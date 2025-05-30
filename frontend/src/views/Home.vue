@@ -157,4 +157,35 @@
   </div>
 </template>
 
+<script setup>
+import { ref, computed, onMounted, watch } from "vue";
+import { useRouter } from "vue-router";
+import { useAuth } from "../composables/useAuth";
+import { studentService } from "../services/axios";
+import {
+  Layers,
+  LogOut,
+  Users,
+  Code,
+  Palette,
+  Search,
+  XCircle,
+  Linkedin,
+  Github,
+  RotateCw,
+  AlertCircle,
+} from "lucide-vue-next";
+
+const router = useRouter();
+const { logout } = useAuth();
+
+const loading = ref(false);
+const error = ref(null);
+const searchQuery = ref("");
+const selectedTrack = ref("");
+const students = ref([]);
+
+
+</script>
+
 
