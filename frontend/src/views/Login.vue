@@ -72,7 +72,14 @@
       </div>
     </div>
 
-   
+    <!-- Background decoration -->
+    <div class="background-decoration">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
   </div>
 </template>
+
+
 
