@@ -81,7 +81,71 @@
   </table>
 </div>
 
+## Getting Started
 
+### Prerequisites
+- Node.js (v16+)
+- MySQL
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd se-factory-portal
+   ```
+
+2. **Backend Setup**
+   ```bash
+   cd backend
+   npm install
+   
+   # Configure environment
+   cp .env.example .env
+   # Edit .env with your MySQL credentials
+   
+   # Setup database
+   npm run setup-db
+   
+   # Start server
+   npm run dev
+   ```
+
+3. **Frontend Setup**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. **Access the application**
+   - Frontend: http://localhost:5173
+   - Backend: http://localhost:4000
+
+### Default Login
+- **Email:** admin@sefactory.com
+- **Password:** admin123
+
+## Security Features
+
+- **Password Hashing** - bcrypt with salt rounds
+- **JWT Tokens** - Secure authentication with 7-day expiry
+- **Route Protection** - Frontend route guards
+- **CORS Configuration** - Controlled cross-origin requests
+- **Input Validation** - Both frontend and backend validation
+
+## Key Vue.js Features Demonstrated
+
+- **Composition API** for better code organization
+- **Reactive State Management** with ref() and computed()
+- **Lifecycle Hooks** (onMounted, watch)
+- **Custom Composables** for reusable logic
+- **Dynamic Components** with conditional rendering
+- **Event Handling** with proper error boundaries
+- **Route Guards** for authentication flow
+
+## Future Enhancements
 
 - [ ] Real-time notifications
 - [ ] Student profile management
