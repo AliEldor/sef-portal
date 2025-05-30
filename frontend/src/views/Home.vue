@@ -244,4 +244,6 @@ onMounted(() => {
 });
 </script>
 
-
+<style scoped>
+@import "../styles/home.css";
+</style>
