@@ -239,7 +239,9 @@ const handleLogout = async () => {
 
 const viewStudentProfile = (student) => {};
 
-
+onMounted(() => {
+  fetchStudents();
+});
 </script>
 
 
