@@ -146,7 +146,13 @@ export const authService = {
     }
   },
 
-  
+  isAuthenticated() {
+    const token = localStorage.getItem("authToken");
+    const user = localStorage.getItem("user");
+    return !!(token && user);
+  },
+
+ 
 };
 
 export { randomUserAPI, mainAPI };
